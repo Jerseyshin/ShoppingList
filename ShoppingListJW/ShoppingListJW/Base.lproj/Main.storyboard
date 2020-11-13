@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hQs-rK-o3v">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Commidity-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CommidityViewController" customModule="ShoppingListJW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hXd-In-VMe">
+                                <rect key="frame" x="0.0" y="64" width="414" height="424"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter commodity name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kaf-J1-qdR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="tJZ-Tw-50g">
+                                        <rect key="frame" x="82" y="42" width="250" height="250"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tJZ-Tw-50g" secondAttribute="height" multiplier="1:1" id="e2o-I0-2nj"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="4qe-Pf-08j" appends="YES" id="I8C-Uw-1Bw"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p6H-HQ-Nv2" customClass="RatingControl" customModule="ShoppingListJW" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="300" width="252" height="44"/>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter reasons/wishes you want to buy it" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvJ-OK-upA">
+                                        <rect key="frame" x="0.0" y="352" width="414" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uy5-0Y-cxM">
+                                        <rect key="frame" x="163" y="394" width="88" height="30"/>
+                                        <state key="normal" title="Take a photo"/>
+                                        <connections>
+                                            <action selector="TakePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LoI-3i-KcM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Kaf-J1-qdR" secondAttribute="trailing" id="NSe-7R-mUg"/>
+                                    <constraint firstAttribute="trailing" secondItem="fvJ-OK-upA" secondAttribute="trailing" id="iAU-vu-hsh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hXd-In-VMe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C8n-Np-awu"/>
+                            <constraint firstItem="hXd-In-VMe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="GWV-o9-3li"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hXd-In-VMe" secondAttribute="trailing" id="h0X-Vt-jcy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Commidity" id="vF6-ic-yYt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="plf-Wc-5C8">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="5dh-1d-zsM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="Nn7-rM-9oO">
+                            <connections>
+                                <segue destination="NnO-5g-RLr" kind="unwind" unwindAction="unwindToCommidityListWithSender:" id="P8E-Jp-Wyn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="Kaf-J1-qdR" id="kb4-Zf-1Ug"/>
+                        <outlet property="photoImageView" destination="tJZ-Tw-50g" id="N1G-Jg-hey"/>
+                        <outlet property="ratingControl" destination="p6H-HQ-Nv2" id="TZq-Q5-QjJ"/>
+                        <outlet property="saveButton" destination="Nn7-rM-9oO" id="Rx9-Ly-eUs"/>
+                        <outlet property="wishTextField" destination="fvJ-OK-upA" id="6jm-YQ-4k9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="NnO-5g-RLr" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="4qe-Pf-08j">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="zaV-dx-RFp"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2742.0289855072465" y="129.61956521739131"/>
+        </scene>
+        <!--Your Commidities-->
+        <scene sceneID="19u-UR-01p">
+            <objects>
+                <tableViewController id="FmS-Z8-ZFB" customClass="CommidityTableViewController" customModule="ShoppingListJW" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eFZ-c0-KJk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommidityTableViewCell" id="hO5-6q-mSf" customClass="CommidityTableViewCell" customModule="ShoppingListJW" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hO5-6q-mSf" id="YPV-Hs-pjE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="tqt-fM-g1C">
+                                            <rect key="frame" x="0.0" y="0.0" width="92" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s5-ah-vxE">
+                                            <rect key="frame" x="100" y="11" width="294" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HuW-QJ-Da9" customClass="RatingControl" customModule="ShoppingListJW" customModuleProvider="target">
+                                            <rect key="frame" x="100" y="40" width="294" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="5s5-ah-vxE" id="c8z-M5-O7s"/>
+                                    <outlet property="photoImageView" destination="tqt-fM-g1C" id="iwx-lJ-rY7"/>
+                                    <outlet property="ratingControl" destination="HuW-QJ-Da9" id="aBj-8Q-w3s"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="3am-TO-hfl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FmS-Z8-ZFB" id="X1N-Ul-Xge"/>
+                            <outlet property="delegate" destination="FmS-Z8-ZFB" id="dOw-kj-GJc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Your Commidities" id="nG2-ew-drh">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="BrF-Ze-CQH">
+                            <connections>
+                                <segue destination="LCX-oc-d6D" kind="show" identifier="AddItem" id="Qib-ai-brS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z78-Og-XxY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1446" y="130"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0HB-eI-zci">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hQs-rK-o3v" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5ZV-P1-8gC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FmS-Z8-ZFB" kind="relationship" relationship="rootViewController" id="JGX-d6-PeO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMk-pz-TaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.85507246376812" y="129.61956521739131"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ww8-af-HHV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LCX-oc-d6D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="lmA-rS-ryu"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zKY-SZ-0zz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="orO-2P-XSb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jRm-K0-Ny3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2096" y="-232"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3am-TO-hfl"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="defaultPhoto" width="250" height="250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
